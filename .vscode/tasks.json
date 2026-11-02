@@ -5,7 +5,7 @@
         {
             "label": "Lancer GameVault",
             "type": "shell",
-            "command": "dotnet run --project GameVault.Api --urls http://localhost:5080",
+            "command": "dotnet run --project src/GameVault.Api --urls http://localhost:5080",
             "group": "build",
             "problemMatcher": []
         }

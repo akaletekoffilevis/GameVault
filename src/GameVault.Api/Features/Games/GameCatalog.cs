@@ -1,6 +1,6 @@
-namespace GameVault.Api;
+namespace GameVault.Api.Features.Games;
 
-public static class GameCatalog
+internal static class GameCatalog
 {
     public static IReadOnlyList<Game> Games { get; } =
     [
