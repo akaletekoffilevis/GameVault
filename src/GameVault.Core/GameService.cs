@@ -1,19 +1,14 @@
-namespace GameVault.Api.Features.Games;
+namespace GameVault.Core;
 
 public sealed class GameService
 {
-    private readonly IReadOnlyList<Game> _games;
+    private readonly IGameRepository _repository;
 
-    public GameService()
-        : this(GameCatalog.Games)
-    {
-    }
-
-    public GameService(IReadOnlyList<Game> games) => _games = games;
+    public GameService(IGameRepository repository) => _repository = repository;
 
     public IReadOnlyList<Game> Search(int? year, string? search)
     {
-        IEnumerable<Game> games = _games;
+        IEnumerable<Game> games = _repository.GetAll();
 
         if (year.HasValue)
         {
@@ -36,7 +31,8 @@ public sealed class GameService
     }
 
     public IReadOnlyList<int> GetYears() =>
-        _games
+        _repository
+            .GetAll()
             .Select(game => game.Year)
             .Distinct()
             .OrderByDescending(year => year)

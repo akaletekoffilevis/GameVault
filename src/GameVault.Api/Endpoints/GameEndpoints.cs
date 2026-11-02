@@ -1,4 +1,6 @@
-namespace GameVault.Api.Features.Games;
+using GameVault.Core;
+
+namespace GameVault.Api.Endpoints;
 
 public static class GameEndpoints
 {

@@ -1,4 +1,4 @@
-namespace GameVault.Api.Features.Games;
+namespace GameVault.Core;
 
 public sealed record Game(
     string Id,

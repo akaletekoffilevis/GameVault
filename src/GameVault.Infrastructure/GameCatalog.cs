@@ -1,4 +1,6 @@
-namespace GameVault.Api.Features.Games;
+using GameVault.Core;
+
+namespace GameVault.Infrastructure;
 
 internal static class GameCatalog
 {

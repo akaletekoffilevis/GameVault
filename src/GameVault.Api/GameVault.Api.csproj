@@ -5,4 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameVault.Core\GameVault.Core.csproj" />
+    <ProjectReference Include="..\GameVault.Infrastructure\GameVault.Infrastructure.csproj" />
+  </ItemGroup>
 </Project>
