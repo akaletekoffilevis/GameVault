@@ -4,8 +4,6 @@ GameVault est un catalogue de jeux PC classés par année. L'interface est servi
 
 ## Architecture
 
-Le projet suit une architecture **Onion** : les dépendances pointent toujours vers le centre (`GameVault.Core`).
-
 ```text
 GameVault.sln
 src/
@@ -51,7 +49,7 @@ GameVault.Api ──> GameVault.Infrastructure
 Depuis la racine du projet :
 
 ```bash
-dotnet run --project src/GameVault.Api
+dotnet run --project src/GameVault.Api ou cd src/GameVault.Api && dotnet run
 ```
 
 Ouvrir ensuite `http://localhost:5080` dans le navigateur. Il faut lancer l'application .NET : ouvrir les fichiers HTML directement ne permet pas d'utiliser l'API.
