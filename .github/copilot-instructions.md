@@ -7,7 +7,13 @@
   - `GameVault.Infrastructure` : adaptateurs (`GameCatalog`, `InMemoryGameRepository`), dépend de `Core`.
   - `GameVault.Api` : présentation (`Program.cs`, `Endpoints/GameEndpoints.cs`, `wwwroot/`), dépend de `Core` et `Infrastructure`.
 - Les dépendances pointent toujours vers `GameVault.Core`.
-- Les tests d'intégration sont dans `tests/GameVault.Tests/`.
+- `GameVault.Api/Program.cs` est la composition root : c'est là qu'on enregistre `IGameRepository`, `GameService` et les middlewares.
+- La logique métier ne doit pas être écrite dans les endpoints ; elle appartient à `GameService`.
+
+## Tests
+- Les tests d'intégration sont dans `tests/GameVault.Tests/` et utilisent `WebApplicationFactory`.
+- Ils couvrent le tri, le filtre par année, la recherche, la liste des années et la page d'accueil.
+- Le projet de tests est marqué `IsPublishable=false` : il ne doit pas apparaître dans `dotnet publish`.
 
 ## Conventions
 - Garder l'interface en français, responsive et accessible.
